@@ -1,29 +1,31 @@
 ## Interview for full time force
-[alt-text](./README.jpeg)
+
+![Screenshot](README.jpeg)
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Clone the repository 
+## Clone the repository
 
 First, Clone the repository and ensure you have installed Nodejs 14v or upper:
 
 ```bash
-git clone https://github.com/devup2332/github-interview-frontend 
+git clone https://github.com/devup2332/github-interview-frontend
 ```
 
-## Install the dependencies 
+## Install the dependencies
 
 Install all the dependencies to run the project:
 
 ```bash
-npm run install 
+npm run install
 ```
-## Run the Project 
+
+## Run the Project
 
 Run de development server:
 
 ```bash
-npm run dev 
+npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
