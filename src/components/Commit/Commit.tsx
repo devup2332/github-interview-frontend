@@ -28,15 +28,17 @@ const Commit = ({ commit, author, sha, html_url }: any) => {
           className="w-full h-full object-cover"
         />
       </div>
-      <section className="grid grid-cols-2 grid-rows-3 w-full">
-        <h2 className="text-white text-sm font-bold">{message}</h2>
+      <section className="grid grid-cols-3 grid-rows-3 w-full">
+        <h2 className="text-white text-sm font-bold col-start-1 col-end-3 row-start-1">
+          {message.length > 70 ? `${message.substring(0, 70)} ...` : message}
+        </h2>
         <h2 className="text-white text-sm row-start-2 row-end-3">
           {authorCommit.name} - <span className="font-bold">{login}</span>
         </h2>
         <h2 className="text-sm text-gray-400 row-start-3 row-end-4">
-          Commited {calculateTime(authorCommit.date)} days ago
+          Commited {calculateTime(authorCommit.date)}
         </h2>
-        <div className="row-start-1 col-start-2 col-end-3 justify-self-end flex items-stretch border-2 border-solid border-newGray rounded-md h-fit bg-bg2">
+        <div className="row-start-1 col-start-3 col-end-3 justify-self-end flex items-stretch border-2 border-solid border-newGray rounded-md h-fit bg-bg2">
           <button
             className="w-8 h-7 border-r-2 border-newGray border-solid flex items-center justify-center hover:bg-gray-700"
             onClick={copyShaClipbaord}
