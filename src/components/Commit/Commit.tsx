@@ -6,11 +6,9 @@ import CheckIcon from "../CheckIcon/CheckIcon";
 import { sleep } from "@/lib/sleep";
 
 const Commit = ({ commit, author, sha, html_url }: any) => {
-  const { avatar_url, login } = author;
+  const { avatar_url, login, html_url: profileUrl } = author;
   const { author: authorCommit, message } = commit;
   const [clipboardReady, setClipbaordReady] = useState(false);
-  const mediaQueryList = window.matchMedia("(min-width: 768px)");
-  const mdMatch = mediaQueryList.matches;
 
   const copyShaClipbaord = async () => {
     setClipbaordReady(true);
@@ -20,12 +18,10 @@ const Commit = ({ commit, author, sha, html_url }: any) => {
   };
 
   const goToCommit = () => (window.location.href = html_url);
+  const goToProfile = () => (window.location.href = profileUrl);
 
   return (
-    <div
-      className="py-3 px-4 lg:px-7 bg-commitBlue text-white rounded-xl flex gap-5"
-      onClick={!mdMatch ? goToCommit : () => {}}
-    >
+    <div className="py-3 px-4 lg:px-7 bg-commitBlue text-white rounded-xl flex gap-5">
       <div className="w-14 h-14 lg:w-20 lg:h-20 rounded-full overflow-hidden">
         <img
           src={avatar_url}
@@ -34,11 +30,20 @@ const Commit = ({ commit, author, sha, html_url }: any) => {
         />
       </div>
       <section className="grid lg:grid-cols-3 lg:grid-rows-3 w-9/12 items-center lg:w-full">
-        <h2 className="text-white text-sm font-bold lg:col-start-1 lg:col-end-3 lg:row-start-1">
+        <h2
+          className="text-white text-sm font-bold lg:col-start-1 lg:col-end-3 lg:row-start-1 cursor-pointer hover:text-blue-400"
+          onClick={goToCommit}
+        >
           {message.length > 70 ? `${message.substring(0, 70)} ...` : message}
         </h2>
         <h2 className="text-white text-sm lg:row-start-2 lg:row-end-3">
-          {authorCommit.name} - <span className="font-bold">{login}</span>
+          {authorCommit.name} -{" "}
+          <span
+            className="font-bold hover:text-blue-400 cursor-pointer"
+            onClick={goToProfile}
+          >
+            {login}
+          </span>
         </h2>
         <h2 className="text-sm text-gray-400 lg:row-start-3 lg:row-end-4">
           Commited {calculateTime(authorCommit.date)}

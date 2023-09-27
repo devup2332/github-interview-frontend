@@ -1,24 +1,31 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## Clone the repository 
 
-First, run the development server:
+First, Clone the repository and ensure you have installed Nodejs 14v or upper:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/devup2332/github-interview-frontend 
+```
+
+## Install the dependencies 
+
+Install all the dependencies to run the project:
+
+```bash
+npm run install 
+```
+## Run the Project 
+
+Run de development server:
+
+```bash
+npm run dev 
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
 ## Learn More
 

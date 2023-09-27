@@ -25,7 +25,7 @@ const CommitsPage = () => {
       <h1 className="text-white text-3xl text-center">
         Repository Commits History
       </h1>
-      <div className="m-auto w-10/12 grid gap-4 xl:w-6/12">
+      <div className="m-auto w-10/12 grid gap-4 xl:w-6/12 max-w-4xl">
         {commits?.map(({ author, commit, sha, html_url }, index) => {
           return (
             <Commit
