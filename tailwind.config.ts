@@ -9,9 +9,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        bg2: "#21262d",
         customBlue: "#0d1117",
         commitBlue: "#161b22",
-        newGray: '##373b42'
+        newGray: "#2f333b",
       },
     },
   },

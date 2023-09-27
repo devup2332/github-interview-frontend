@@ -11,7 +11,7 @@ interface ICommit {
   url: string;
 }
 
-const sleep = (time: number) => {
+export const sleep = (time: number) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(null);
