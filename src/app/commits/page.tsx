@@ -10,8 +10,7 @@ const CommitsPage = () => {
     data: commits,
     loading,
     error,
-  } = useFetch("https://api.github.com/repos/devup2332/nvim/commits");
-  console.log({ commits });
+  } = useFetch("https://api.github.com/repos/devup2332/github-interview-frontend/commits");
 
   if (loading)
     return (
@@ -22,10 +21,14 @@ const CommitsPage = () => {
     );
   return (
     <div className="py-5 grid gap-10">
-      <h1 className="text-white text-3xl text-center">Repository Commits History</h1>
+      <h1 className="text-white text-3xl text-center">
+        Repository Commits History
+      </h1>
       <div className="m-auto w-10/12 grid gap-4 xl:w-6/12">
-        {commits.map(({ author, commit }, index) => {
-          return <Commit key={index} author={author} commit={commit} />;
+        {commits?.map(({ author, commit, sha }, index) => {
+          return (
+            <Commit key={index} author={author} commit={commit} sha={sha} />
+          );
         })}
       </div>
     </div>

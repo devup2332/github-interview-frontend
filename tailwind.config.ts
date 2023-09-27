@@ -11,6 +11,7 @@ const config: Config = {
       colors: {
         customBlue: "#0d1117",
         commitBlue: "#161b22",
+        newGray: '##373b42'
       },
     },
   },
