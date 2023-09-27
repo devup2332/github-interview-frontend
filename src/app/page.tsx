@@ -7,12 +7,10 @@ const CommitsPage = () => {
   const {
     data: commits,
     loading,
-    error,
   } = useFetch(
     "https://api.github.com/repos/devup2332/github-interview-frontend/commits",
   );
 
-  console.log({ commits });
   if (loading)
     return (
       <div className="flex justify-center items-center gap-2 text-white h-screen">
