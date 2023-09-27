@@ -1,23 +1,6 @@
+import { sleep } from "@/lib/sleep";
+import { ICommit } from "@/models/Commit";
 import { useEffect, useState } from "react";
-
-interface ICommit {
-  author: any;
-  comments_url: string;
-  commit: any;
-  html_url: string;
-  node_id: string;
-  parents: any[];
-  sha: string;
-  url: string;
-}
-
-export const sleep = (time: number) => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(null);
-    }, time);
-  });
-};
 
 export const useFetch = (url: string) => {
   const [data, setData] = useState<ICommit[]>([]);
@@ -29,7 +12,6 @@ export const useFetch = (url: string) => {
       setLoading(true);
       const response = await fetch(url);
       const data = await response.json();
-      await sleep(2000);
       setData(data);
       setLoading(false);
     } catch (err) {
