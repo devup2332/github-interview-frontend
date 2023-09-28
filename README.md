@@ -17,7 +17,7 @@ git clone https://github.com/devup2332/github-interview-frontend
 Install all the dependencies to run the project:
 
 ```bash
-npm run install
+npm install
 ```
 
 ## Run the Project
